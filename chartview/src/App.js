@@ -1,18 +1,18 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Navbar from './Navbar';
-import DetailComponent from './DetailComponent';
-import ListComponent from './ListComponent';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import DetailComponent from './components/DetailComponent';
+import ListComponent from './components/ListComponent';
 
 function App() {
   return (
     <Router>
       <Navbar />
-      <Switch>
-        <Route path="/list/:id" component={DetailComponent} />
-        <Route path="/list" component={ListComponent} />
+      <Routes>
+        <Route path="/list/:id" element={<DetailComponent />} />
+        <Route path="/list" element={<ListComponent />} />
         {/* Add other routes as needed */}
-      </Switch>
+      </Routes>
     </Router>
   );
 }
